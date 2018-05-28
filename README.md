@@ -47,30 +47,30 @@ Permite almacenar una tupla con los valores de latitud y longitud permitiendo re
 
 ## Principales operaciones
 ### Con strings
-APPEND key value                  # Concatena al final un valor.
-SET key value                     # Setea un valor en una clave.
-SETNX key value                   # Setea un valor en una clave si no existe.
-SETRANGE key offset value         # Sobre-escribe una parte de un string.
-STRLEN key                        # Largo de un string.
-GET key                           # Obtiene el valor para una clave.
-GETRANGE key value                # Obtiene un substring del valor para una clave
-INCR key                          # Incrementa el valor de un contador.
-DECR key                          # Decrementa el valor de un contador.
-DEL key                           # Borra una clave.
+- APPEND key value                  # Concatena al final un valor.
+- SET key value                     # Setea un valor en una clave.
+- SETNX key value                   # Setea un valor en una clave si no existe.
+- SETRANGE key offset value         # Sobre-escribe una parte de un string.
+- STRLEN key                        # Largo de un string.
+- GET key                           # Obtiene el valor para una clave.
+- GETRANGE key value                # Obtiene un substring del valor para una clave
+- INCR key                          # Incrementa el valor de un contador.
+- DECR key                          # Decrementa el valor de un contador.
+- DEL key                           # Borra una clave.
 
-EXPIRE key 120                    # Setea un Time to live de 120 segundos para la clave.
-TTL key                           # Retorna el tiempo en segundos que queda de vida para la clave.
+- EXPIRE key 120                    # Setea un Time to live de 120 segundos para la clave.
+- TTL key                           # Retorna el tiempo en segundos que queda de vida para la clave.
 
 ### Con listas
-RPUSH key value [value ...]           # Inserta un nuevo valor al final de la lista.
-LPUSH key value [value ...]           # Inserta un nuevo valor al principio de la lista.
-LRANGE key start stop                 # Devuelve un subset de la lista.
-LINDEX key index                      # Obtenemos un elemento de la lista por su índice.
-LINSERT key BEFORE|AFTER pivot value  # Inserta un elemento antes o después de otro en la lista.
-LLEN key                              # Devuelve el largo de la lista.
-LPOP key                              # Elimina el primer elemnto de la lista y lo devuelve.
-LSET key index value                  # Setea un valor en una determinada posición de la lista.
-LTRIM key start stop                  # Realiza un trim a la lista.
-RPOP key                              # Elimina el último elemnto de la lista y lo devuelve.
+- RPUSH key value [value ...]           # Inserta un nuevo valor al final de la lista.
+- LPUSH key value [value ...]           # Inserta un nuevo valor al principio de la lista.
+- LRANGE key start stop                 # Devuelve un subset de la lista.
+- LINDEX key index                      # Obtenemos un elemento de la lista por su índice.
+- LINSERT key BEFORE|AFTER pivot value  # Inserta un elemento antes o después de otro en la lista.
+- LLEN key                              # Devuelve el largo de la lista.
+- LPOP key                              # Elimina el primer elemnto de la lista y lo devuelve.
+- LSET key index value                  # Setea un valor en una determinada posición de la lista.
+- LTRIM key start stop                  # Realiza un trim a la lista.
+- RPOP key                              # Elimina el último elemnto de la lista y lo devuelve.
 
 
