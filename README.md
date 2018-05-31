@@ -1,5 +1,5 @@
 # eg-conversor-xtend-redis
-Ejemplo de conversor de moneda utilizando a Redis como cache para almacenar las cotizaciones. El mismo utiliza el plugin de Jedis para conectarse con la base de datos. Podés seguir la guía de persistencia en [este link] (https://docs.google.com/document/d/1eTmmFrADzvp2H9Vg88_ChqRc61U0tNx-FXntkmzmvlE/edit?usp=sharing)
+Ejemplo de conversor de moneda utilizando a Redis como cache para almacenar las cotizaciones. El mismo utiliza el plugin de Jedis para conectarse con la base de datos. Podés seguir la guía de persistencia en [este link](https://docs.google.com/document/d/1eTmmFrADzvp2H9Vg88_ChqRc61U0tNx-FXntkmzmvlE/edit?usp=sharing)
 
 ## Redis
 Es una Base de datos del tipo Key-Value open source. Simplemente guardan tuplas que contienen una clave y su valor. Cuándo se quiere recuperar un dato, simplemente se busca por su clave y se recupera el mismo. Los datos son BLOB (Binary Large Object), por lo tanto son opacos (el motor no saben que es), dejando esta responsabilidad en el dominio de la aplicación
