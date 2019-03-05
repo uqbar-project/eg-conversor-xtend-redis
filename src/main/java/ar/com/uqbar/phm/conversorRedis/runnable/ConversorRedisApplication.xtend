@@ -33,12 +33,12 @@ class ConversorRedisBootstrap implements Bootstrap {
 		println("Running initial script")
 		jedis => [
 			del("dolar")
-			lpush("dolar", "20.5")
+			lpush("dolar", "42.5")
 			lpush("dolar", "20.2")
 			del("euro")
 			del("real")
-			set("euro", "30.0")
-			set("real", "3.0")
+			set("euro", "50.0")
+			set("real", "5.0")
 		]
 	}
 	

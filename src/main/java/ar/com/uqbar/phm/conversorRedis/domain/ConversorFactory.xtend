@@ -9,7 +9,7 @@ import redis.clients.jedis.exceptions.JedisConnectionException
 
 class ConversorFactory {
 	var JedisPool jedisPool
-	private static ConversorFactory instance = null
+	static ConversorFactory instance = null
 
 	private new() {
 		jedisPool = new JedisPool(new JedisPoolConfig(), "localhost")
