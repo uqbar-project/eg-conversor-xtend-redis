@@ -12,7 +12,7 @@ class ConversorFactory {
 	static ConversorFactory instance = null
 
 	private new() {
-		jedisPool = new JedisPool(new JedisPoolConfig(), "localhost")
+		jedisPool = new JedisPool(new JedisPoolConfig, Constants.LOCALHOST)
 	}
 
 	static def getInstance() {
@@ -24,25 +24,25 @@ class ConversorFactory {
 
 	def Conversor conversorDolares() {
 		new Conversor => [
-			cotizacionDeMoneda = applyOnJedis(traerValorDeLista("dolar", 1))
+			cotizacionDeMoneda = applyOnJedis(traerValorDeLista(Constants.DOLAR, 1))
 		]
 	}
 
 	def Conversor conversorEuros() {
 		new Conversor => [
-			cotizacionDeMoneda = applyOnJedis(traerValor("euro"))
+			cotizacionDeMoneda = applyOnJedis(traerValor(Constants.EURO))
 		]
 	}
 
 	def conversorDolaresPrevio() {
 		new Conversor => [
-			cotizacionDeMoneda = applyOnJedis(traerValorDeLista("dolar", 0))
+			cotizacionDeMoneda = applyOnJedis(traerValorDeLista(Constants.DOLAR, 0))
 		]
 	}
 
 	def conversorReales() {
 		new Conversor => [
-			cotizacionDeMoneda = applyOnJedis(traerValor("real"))
+			cotizacionDeMoneda = applyOnJedis(traerValor(Constants.REAL))
 		]
 	}
 
@@ -62,7 +62,7 @@ class ConversorFactory {
 	}
 
 	private def traerValorDeLista(String key, int position) {
-		return [Jedis jedis|jedis.lindex(key, position)]
+		return [ Jedis jedis|jedis.lindex(key, position)]
 	}
 
 	private def traerValor(String key) {
