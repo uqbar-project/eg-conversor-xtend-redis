@@ -47,8 +47,9 @@ class ConversorFactory {
 	}
 
 	private def applyOnJedis((Jedis)=>String aBlock) {
+		var Jedis jedis
 		try {
-			val jedis = jedisPool.resource
+			jedis = jedisPool.resource
 			val value = aBlock.apply(jedis)
 			if (value === null) {
 				throw new UserException("No hay datos de las monedas solicitadas")
@@ -57,12 +58,15 @@ class ConversorFactory {
 			jedis.close()
 			returnValue
 		} catch (JedisConnectionException e) {
-			throw new UserException("Error de conexión a Redis")			
+			throw new UserException("Error de conexión a Redis")
+		} finally {
+			if (jedis !== null)
+				jedis.close()
 		}
 	}
 
 	private def traerValorDeLista(String key, int position) {
-		return [ Jedis jedis|jedis.lindex(key, position)]
+		return [Jedis jedis|jedis.lindex(key, position)]
 	}
 
 	private def traerValor(String key) {

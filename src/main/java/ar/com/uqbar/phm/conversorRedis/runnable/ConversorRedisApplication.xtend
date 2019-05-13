@@ -26,14 +26,14 @@ class ConversorRedisBootstrap implements Bootstrap {
 	Jedis jedis = new Jedis("localhost")
 	
 	override isPending() {
-		jedis.get("euro") === null	
+		jedis.get("euro") === null
 	}
 	
 	override run() {
 		println("Running initial script")
 		jedis => [
 			del("dolar")
-			lpush("dolar", "42.5")
+			lpush("dolar", "44.8")
 			lpush("dolar", "20.2")
 			del("euro")
 			del("real")
