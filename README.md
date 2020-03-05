@@ -5,13 +5,13 @@ Ejemplo de conversor de moneda utilizando a Redis como cache para almacenar las 
 Es una Base de datos del tipo Key-Value open source. Simplemente guardan tuplas que contienen una clave y su valor. Cuándo se quiere recuperar un dato, simplemente se busca por su clave y se recupera el mismo. Los datos son BLOB (Binary Large Object), por lo tanto son opacos (el motor no saben que es), dejando esta responsabilidad en el dominio de la aplicación
 
 ## Instalando Redis
-Para ponernos en contexto les comentamos que Redis está escrito en lenguaje ANSI C y funciona en la mayoría de los sistemas POSIX como Linux, * BSD, OS X sin dependencias externas. Para poder correr el ejemplo, tenemos que previamente tener instalado redis. Para esto tenemos que ir a la [página oficial de redis](https://redis.io/) y bajar la última versión. En el ejemplo asumiremos que la última versión es la 4.0.9, pero adaptala a la que vayas a bajar desde [este link](http://download.redis.io/releases/redis-4.0.9.tar.gz).
+Para ponernos en contexto les comentamos que Redis está escrito en lenguaje ANSI C y funciona en la mayoría de los sistemas POSIX como Linux, * BSD, OS X sin dependencias externas. Para poder correr el ejemplo, tenemos que previamente tener instalado redis. Para esto tenemos que ir a la [página oficial de redis](https://redis.io/) y bajar la última versión. En el ejemplo asumiremos que la última versión es la 5.0.7, pero adaptala a la que vayas a bajar desde [este link](http://download.redis.io/releases/redis-5.0.7.tar.gz).
 Una vez terminado de descargar, realizamos los siguientes pasos:
 - Descomprimimos el archivo bajado y pasamos a la carpeta
 
 ```bash
-tar xzvf redis-4.0.9.tar.gz
-cd redis-4.0.9
+tar xzvf redis-5.0.7.tar.gz
+cd redis-5.0.7
 ```
 
 - Ahora procedemos a compilar los binarios de la base de datos de la siguiente manera
@@ -24,6 +24,8 @@ make
 ```bash
 make test
 ```
+
+> Si te aparece un error similar a "You need tcl 8.5 or newer in order to run the Redis test" instalalo siguiendo los pasos de [esta pregunta de Stack Overflow](https://askubuntu.com/questions/58869/how-to-sucessfully-install-redis-server-tclsh8-5-not-found-error)
 
 Los principales binarios a utilizar son **redis-server** y **redis-cli**, ambos **se encuentran en el directorio src**. Para levantar una instancia de la base de datos solamente tenemos que ejecutar la siguiente línea
 
